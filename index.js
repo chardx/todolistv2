@@ -16,15 +16,7 @@ app.use(express.static("public")); // use to set CSS and other public files
 
 
 // Connect to Database
-const URL_STRING =  connection.getConnectionURL();
-
-mongoose.set("strictQuery", true);
-
-mongoose.connect( URL_STRING + "/todolistDB")
-    .then((result) => console.log("Connected to DB Successfully"))
-    .catch((err) => console.log("There's an error connecting" + err));
-
-
+connection.connectToDB();
 
 const itemsSchema = new mongoose.Schema({
     name: {
