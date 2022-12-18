@@ -4,9 +4,8 @@ const connection = require(__dirname + "/connection.js");
 const bodyParser = require('body-parser');
 const mongoose = require("mongoose");
 const _ = require("lodash");
+
 const app = express();
-
-
 
 var works = [];
 app.set("view engine", "ejs");
@@ -181,6 +180,7 @@ app.post("/delete", function (req, res) {
 app.get("/about", function (req, res) {
     res.render("about");
 });
+
 app.listen(3000, function () {
-    console.log("Listening to the saong we use to sing");
+    console.log("Listening to the song we use to sing");
 });
